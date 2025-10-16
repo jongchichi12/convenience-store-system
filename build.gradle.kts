@@ -22,15 +22,9 @@ kotlin {
 }
 
 application {
-    // Main.kt 의 진입점 (패키지 기준)
+    // Main.kt 의 진입점 (패키지 기준
     mainClass.set("store.MainKt")
 }
-
-/**
- * ▶ Shadow 플러그인 없이 실행 가능한 단일 JAR 생성
- *    - ./gradlew clean build
- *    - java -jar build/libs/convenience-store-system-1.0.0.jar
- */
 tasks.jar {
     // META-INF 충돌 방지
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
