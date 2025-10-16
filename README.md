@@ -61,13 +61,4 @@ Main.kt에서는 InventoryManager 객체를 생성하고 runReport() 함수를 �
 
 사용 시나리오 요약
 
-SampleData (입력 데이터)
-       
-	   ↓
-ProductExtensions (확장 함수로 로직 수행)
-       
-	   ↓
-InventoryManager (분석 및 리포트 생성)
-       
-	   ↓
-Main.kt (실행 및 콘솔 출력)
+SampleData (입력 데이터) -> ProductExtensions (확장 함수로 로직 수행) -> InventoryManager (분석 및 리포트 생성) -> Main.kt (실행 및 콘솔 출력)
