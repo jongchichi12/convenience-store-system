@@ -3,9 +3,8 @@ package store.data
 import store.model.Product
 import store.model.ProductCategory
 import java.time.LocalDate
-/**
- * 과제에서 제시된 예시 데이터를 그대로 하드코딩 (Phase 1 입력)
- */
+
+// 샘플 상품 제네릭 리스트에 담음 이거 object 한번 물어봐야 할듯
 object SampleData {
 
     val products: List<Product> = listOf(
@@ -18,7 +17,7 @@ object SampleData {
         Product("초코파이",      3000, ProductCategory.SNACK,    20, 15, LocalDate.now().plusDays(1)),
         Product("즉석라면",      1200, ProductCategory.FOOD,     40, 45, LocalDate.now().plusDays(30)),
     )
-    /** 오늘 판매량 (상품명 -> 수량) */
+    // 오늘 판매량 예시로 입력 (상품명 -> 수량)
     val todaySales: Map<String, Int> = mapOf(
         "새우깡" to 15,
         "콜라 500ml" to 12,
@@ -29,15 +28,15 @@ object SampleData {
         "김치찌개 도시락" to 2,
     )
 
-    // 시스템 설정값 (과제 값 사용)
-    const val stockThreshold: Double = 0.30      // 재고율 30% 이하 경고
+    // 시스템 설정값 과제에 나온 설정 그대로 사용
+    const val stockThreshold: Double = 0.30      // 재고율 30% 이하 시 경고
     const val expiryWarningDays: Int = 3         // 3일 이내 임박
 
-    /** 남은 일수 -> 할인율 */
+    // 남은 일수에 맞게 할인률 적용
     val discountPolicy: Map<Int, Double> = mapOf(
         3 to 0.0,   // 3일 이상: 0%
-        2 to 0.3,
-        1 to 0.5,
-        0 to 0.7
+        2 to 0.3,   // 2일 남음: 30%
+        1 to 0.5,   // 1일 남음: 50%
+        0 to 0.7    // 당일: 70%
     )
 }
